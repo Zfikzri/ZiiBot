@@ -1,7 +1,9 @@
 const TelegramBot = require("node-telegram-bot-api")
 const NewsAPI = require('newsapi');
+require('dotenv').config();
 
-const token = "7129659146:AAFHY0hHTtZXahisb4vT00y_8nScykMdkC4"
+
+const token = process.env.BOT_TOKEN
 const options = {
     polling: true
 }
@@ -93,7 +95,7 @@ ziibot.onText(cuaca, async(callback) => {
 
 ziibot.onText(quote, async(callback) => {
     const QUOTE_ENDPOINT = "https://api.api-ninjas.com/v1/quotes?category="
-    const API_KEY = "nUrh3ps3yQLp1ocRarIJLg==n0PfkyvyVlKZoW5Y"
+    const API_KEY = process.env.API_KEY_QUOTE
 
     try {
         const apiCall = await fetch(QUOTE_ENDPOINT, {
@@ -114,7 +116,7 @@ ziibot.onText(quote, async(callback) => {
 })
 
 ziibot.onText(berita, async(callback) => {
-    const API_KEY = new NewsAPI('46c69ee329a044cf82f15a914b62af0e');
+    const API_KEY = new NewsAPI(process.env.API_KEY_NEWS);
 
     API_KEY.v2.topHeadlines({
         source:'google-news',
