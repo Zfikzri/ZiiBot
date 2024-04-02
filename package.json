@@ -1,0 +1,16 @@
+{
+  "name": "ziibot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "bot": "nodemon main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "newsapi": "^2.4.1",
+    "node-telegram-bot-api": "^0.65.1"
+  }
+}
